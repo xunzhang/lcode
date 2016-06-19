@@ -3,6 +3,7 @@ class Solution {
   vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
     vector<int> dups;
     if((nums1.size() == 0) || (nums2.size() == 0)) return dups;
+    if(nums1.size() < nums2.size()) return intersection(nums2, nums1);
     sort(nums1.begin(), nums1.end());
     sort(nums2.begin(), nums2.end());
     for(size_t i = 0; i < nums2.size(); ++i) {
